@@ -13,7 +13,7 @@
     },
     "parserOptions": {
         "sourceType": "module",
-        "ecmaVersion": 2020
+        "ecmaVersion": 2022
     },
     "rules": {
         // Rules are divided into sections from http://eslint.org/docs/rules/

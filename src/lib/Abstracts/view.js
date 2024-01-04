@@ -1,39 +1,40 @@
 class AbstractView {
-    constructor(model, controller) {
+    constructor(model) {
         if (new.target === AbstractView) {
             throw new TypeError('Cannot instantiate abstract class directly');
         }
 
-        this.controller = controller;
-        this.model = model;
+        this._model = model;
+        this._rootEl = null;
+        this._controller = null;
     }
 
-    getModel() {
-        return this.model;
+    get model() {
+        return this._model;
     }
 
-    getController() {
-        return this.controller;
+    set model(newModel) {
+        this._model = newModel;
     }
 
-    getRootEl() {
-        return this.rootEl;
+    get controller() {
+        return this._controller;
     }
 
-    setController(newController) {
-        this.controller = newController;
+    set controller(newController) {
+        this._controller = newController;
     }
 
-    setModel(newModel) {
-        this.model = newModel;
+    get rootEl() {
+        return this._rootEl;
     }
 
-    setRootEl(newRootEll) {
-        this.rootEl = newRootEll;
+    set rootEl(newRootEll) {
+        this._rootEl = newRootEll;
     }
 
     render() {
-        // this method will be modified in subclasses
+        // set up in child class
     }
 }
 
